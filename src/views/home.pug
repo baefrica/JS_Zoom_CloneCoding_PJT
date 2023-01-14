@@ -1,0 +1,24 @@
+doctype html
+html(lang="ko")
+  head
+      title Boom 
+      link(rel="stylesheet", href="https://unpkg.com/mvp.css")
+  body
+    header 
+        h1 Boom
+    main
+        div#welcome 
+            form
+                input(type="text", placeholder="room name", required)
+                button Enter Room
+        div#call  
+            div#myStream 
+                //- playsinline : 전체화면이 되지 않도록
+                video#myFace(autoplay, playsinline, width="400", height="400")
+                button#mute Mute
+                button#camera Turn Camera Off
+                select#cameras
+            
+                video#peerStream(autoplay, playsinline, width="400", height="400")
+    script(src="/socket.io/socket.io.js")
+    script(src="/public/js/app.js")
